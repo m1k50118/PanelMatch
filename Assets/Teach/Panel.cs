@@ -6,6 +6,10 @@ using UnityEngine.Events;
 
 namespace Teach
 {
+
+	/// <summary>
+	/// パネルにつけるコンポーネント．
+	/// </summary>
 	[RequireComponent(typeof(Button))]
 	[RequireComponent(typeof(Image))]
 	public class Panel : MonoBehaviour
