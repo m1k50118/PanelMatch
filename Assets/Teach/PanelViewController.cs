@@ -9,6 +9,9 @@ namespace Teach
 	public class IntUnityEvent : UnityEvent<int>{
 	}
 
+	/// <summary>
+	/// パネルの見た目を管理するやつ．パネルを押した時のイベントも持つ
+	/// </summary>
 	public class PanelViewController : MonoBehaviour
 	{
 		// パネルをタッチしたときのイベント　　UniRx使ったほうがいいけどこっちの方が少しだけ簡単

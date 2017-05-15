@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Teach{
+	/// <summary>
+	/// パネルを押した時に起こること(モデル)とコントローラーを接続するやつ
+	/// </summary>
 	public class PanelPresenter : MonoBehaviour {
 
 		public PanelViewController con;

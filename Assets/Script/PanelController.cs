@@ -42,6 +42,10 @@ public class PanelController : MonoBehaviour {
 		}
 	}
 
+	void Initialize(UnityAction<int>){
+	
+	}
+
 	void DoClickPanelEvent(int id){
 		onClickPanelEvent.Invoke (id);
 	}
