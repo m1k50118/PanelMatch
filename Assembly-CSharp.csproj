@@ -46,7 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Panel.cs" />
+     <Compile Include="Assets\Script\Panel.cs" />
+     <Compile Include="Assets\Script\PanelController.cs" />
      <Compile Include="Assets\Teach\Panel.cs" />
      <Compile Include="Assets\Teach\PanelPresenter.cs" />
      <Compile Include="Assets\Teach\PanelViewController.cs" />

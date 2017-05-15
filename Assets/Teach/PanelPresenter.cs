@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Teach{
-
-
 	public class PanelPresenter : MonoBehaviour {
 
 		public PanelViewController con;
