@@ -8,3 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/makoto.unity
     guid: c76a21160e7774b81a9a61c270ba2aed
+  - enabled: 1
+    path: Assets/Stage1/stage1.unity
+    guid: fd9ca56ba78054b7a96b9257416c1cce
+  - enabled: 1
+    path: Assets/Stage2/stage2.unity
+    guid: e487493061876404e955a2b94948525d
+  - enabled: 1
+    path: Assets/Stage3/stage3.unity
+    guid: cb47fe6ec1150413099886021963c1c9
+  - enabled: 1
+    path: Assets/stage4.unity
+    guid: e582dda0bec1b4ab9b500361229d5749
+  - enabled: 1
+    path: Assets/stage5.unity
+    guid: 878489b51e5b649d384c51e06f79d62d

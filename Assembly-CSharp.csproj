@@ -46,8 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\Panel.cs" />
-     <Compile Include="Assets\Script\PanelController.cs" />
+     <Compile Include="Assets\Stage1\Script\Currect.cs" />
+     <Compile Include="Assets\Stage1\Script\Panel.cs" />
+     <Compile Include="Assets\Stage1\Script\PanelController.cs" />
+     <Compile Include="Assets\Stage2\Script2\Currect2.cs" />
+     <Compile Include="Assets\Stage2\Script2\Panel2.cs" />
+     <Compile Include="Assets\Stage2\Script2\PanelController2.cs" />
+     <Compile Include="Assets\Stage3\Script3\Currect3.cs" />
+     <Compile Include="Assets\Stage3\Script3\Panel3.cs" />
+     <Compile Include="Assets\Stage3\Script3\PanelController3.cs" />
      <Compile Include="Assets\Teach\Panel.cs" />
      <Compile Include="Assets\Teach\PanelPresenter.cs" />
      <Compile Include="Assets\Teach\PanelViewController.cs" />
