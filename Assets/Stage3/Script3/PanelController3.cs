@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PanelController3 : MonoBehaviour {
 
@@ -12,6 +11,7 @@ public class PanelController3 : MonoBehaviour {
 	private int[,] currectflag;
 	public GameObject objPref;
 	public GameObject currectPref;
+	public GameObject clear;
 	public Transform canvas;
 	List<Panel3> panels =new List<Panel3>();
 	List<Currect3> currects = new List<Currect3> ();
@@ -44,8 +44,8 @@ public class PanelController3 : MonoBehaviour {
 				newcurrect.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (-490f + h * 60, 110 + v * 60);
 				var currect = newcurrect.GetComponent<Currect3> ();
 				currects.Add (currect);
-				currect.Xcurrect = h;
-				currect.Ycurrect = v;
+				currect.Xcurrect += h;
+				currect.Ycurrect += v;
 			}
 		}
 	}
@@ -86,22 +86,38 @@ public class PanelController3 : MonoBehaviour {
 		}
 	}
 
+	public void ResetFlag(){
+		StartCoroutine (ResetCoroutine());
+	}
+
+	IEnumerator ResetCoroutine(){
+		//matu
+		yield return new WaitForSeconds(1.5f);
+		InitFlag ();
+		SetPanelFlag ();
+	}
+
 	public void SetPanelFlag(){
 		ChangeFlag (0,0);
-		ChangeFlag (0,3);
 		ChangeFlag (1,1);
 		ChangeFlag (1,2);
+		ChangeFlag (1,3);
 		ChangeFlag (2,0);
-
+		ChangeFlag (2,1);
+		ChangeFlag (2,2);
+		ChangeFlag (3,3);
 	}
 
 	public void SetCurrectFlag(){
 		currectflag = new int[num, num];
-		for (int i = 1; i < 3; i++) {
-			for (int j = 0; j < num; j++) {
-				currectflag [i, j] = 1;
-			}
-		}
+		currectflag [0, 1] = 1;
+		currectflag [0, 2] = 1;
+		currectflag [1, 0] = 1;
+		currectflag [1, 3] = 1;
+		currectflag [2, 0] = 1;
+		currectflag [2, 3] = 1;
+		currectflag [3, 1] = 1;
+		currectflag [3, 2] = 1;
 		CurrectColor ();
 	}
 
@@ -141,22 +157,15 @@ public class PanelController3 : MonoBehaviour {
 		}
 	}
 
-	public void FlagCom(){
-		int nCom = 0;
+	public bool isFlag(){
 		for (int i = 0; i < num; i++) {
 			for (int j = 0; j < num; j++) {
-				if (flag [i,j ] == currectflag [i, j]) {
-					nCom += 1;
+				if (flag [i, j] != currectflag [i, j]) {
+					return false;
 				}
 			}
 		}
-		if (nCom == num * num) {
-			Debug.Log ("正解だよ");
-			Invoke ("Load", 3.5f);
-		}
-	}
-
-	void Load(){
-		SceneManager.LoadScene ("stage4");
+		clear.SetActive (true);
+		return true;
 	}
 }

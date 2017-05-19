@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PanelController : MonoBehaviour {
 
@@ -12,6 +11,7 @@ public class PanelController : MonoBehaviour {
 	private int[,] currectflag;
 	public GameObject objPref;
 	public GameObject currectPref;
+	public GameObject clear;
 	public Transform canvas;
 	List<Panel> panels =new List<Panel>();
 	List<Currect> currects = new List<Currect> ();
@@ -86,6 +86,18 @@ public class PanelController : MonoBehaviour {
 		}
 	}
 
+	public void ResetFlag(){
+		StartCoroutine (ResetCoroutine());
+	}
+
+	IEnumerator ResetCoroutine(){
+		
+		//matu
+		yield return new WaitForSeconds(1.5f);
+		InitFlag ();
+		SetPanelFlag ();
+	}
+
 	public void SetPanelFlag(){
 		ChangeFlag (0,1);
 		ChangeFlag (1,1);
@@ -145,22 +157,15 @@ public class PanelController : MonoBehaviour {
 		}
 	}
 
-	public void FlagCom(){
-		int nCom = 0;
+	public bool isFlag(){
 		for (int i = 0; i < num; i++) {
 			for (int j = 0; j < num; j++) {
-				if (flag [i, j] == currectflag [i, j]) {
-					nCom += 1;
+				if (flag [i, j] != currectflag [i, j]) {
+					return false;
 				}
 			}
 		}
-		if (nCom == num * num) {
-			Debug.Log ("正解だよ");
-			Invoke ("Load", 3.5f);
-		}
-	}
-
-	void Load(){
-		SceneManager.LoadScene ("stage2");
+		clear.SetActive (true);
+		return true;
 	}
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Button))]
 [RequireComponent(typeof(Image))]
@@ -14,14 +15,18 @@ public class Panel3 : MonoBehaviour {
 	[SerializeField] public Button button;
 	[SerializeField] public  Image image;
 
+	[SerializeField] GameObject countcon;
 	[SerializeField] GameObject panelcon;
+	Count3 decrese;
 	PanelController3 FlagChange;
 
 	void Start(){
 		panelcon = GameObject.FindGameObjectWithTag ("PCon");
+		countcon = GameObject.FindGameObjectWithTag ("Count");
 		FlagChange = panelcon.GetComponent<PanelController3> ();
 		FlagChange.InitFlag ();
 		FlagChange.SetPanelFlag ();
+		decrese = countcon.GetComponent<Count3> ();
 	}
 
 	void Reset(){
@@ -31,6 +36,19 @@ public class Panel3 : MonoBehaviour {
 
 	public void OnClick(){
 		FlagChange.PutFlag (this.X, this.Y);
-		FlagChange.FlagCom ();
+		decrese.Decrese ();
+		if (decrese.Max <= 0) {
+			FlagChange.isFlag ();
+		}
+		if (FlagChange.isFlag()) {
+			Invoke ("Load", 3.5f);
+		} else if(decrese.Max==0) {
+			FlagChange.ResetFlag ();
+			decrese.ResetCount ();
+		} 
+	}
+
+	void Load(){
+		SceneManager.LoadScene ("stage4");
 	}
 }

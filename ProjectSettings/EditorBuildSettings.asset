@@ -18,8 +18,11 @@ EditorBuildSettings:
     path: Assets/Stage3/stage3.unity
     guid: cb47fe6ec1150413099886021963c1c9
   - enabled: 1
-    path: Assets/stage4.unity
+    path: Assets/Stage4/stage4.unity
     guid: e582dda0bec1b4ab9b500361229d5749
   - enabled: 1
-    path: Assets/stage5.unity
+    path: Assets/Stage5/stage5.unity
     guid: 878489b51e5b649d384c51e06f79d62d
+  - enabled: 1
+    path: Assets/GameOver.unity
+    guid: 0ced99208da404687ac8acc8fbcb6014
