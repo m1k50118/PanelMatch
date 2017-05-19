@@ -46,7 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ReturnScene.cs" />
+     <Compile Include="Assets\GameOver\ReturnScene.cs" />
      <Compile Include="Assets\Stage1\Script\ClearText.cs" />
      <Compile Include="Assets\Stage1\Script\Count.cs" />
      <Compile Include="Assets\Stage1\Script\Currect.cs" />
@@ -76,6 +76,7 @@
      <Compile Include="Assets\Teach\Panel.cs" />
      <Compile Include="Assets\Teach\PanelPresenter.cs" />
      <Compile Include="Assets\Teach\PanelViewController.cs" />
+     <Compile Include="Assets\Titile\Title.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

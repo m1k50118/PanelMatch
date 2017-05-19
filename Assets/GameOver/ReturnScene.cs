@@ -12,6 +12,6 @@ public class ReturnScene : MonoBehaviour {
 	
 	IEnumerator ReturnSceneCorutine(){
 		yield return new WaitForSeconds (3.0f);
-		SceneManager.LoadScene ("Stage1");
+		SceneManager.LoadScene ("Title");
 	}
 }

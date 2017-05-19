@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/makoto.unity
     guid: c76a21160e7774b81a9a61c270ba2aed
+  - enabled: 1
+    path: Assets/Titile/Title.unity
+    guid: 80a2680b5bb374a6eb09867bff57eb77
   - enabled: 1
     path: Assets/Stage1/stage1.unity
     guid: fd9ca56ba78054b7a96b9257416c1cce
