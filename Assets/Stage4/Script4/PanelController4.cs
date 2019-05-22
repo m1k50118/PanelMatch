@@ -25,7 +25,7 @@ public class PanelController4 : MonoBehaviour {
 		for (int v = 0; v < num; v++) {
 			for (int h = 0; h < num; h++) {
 				var newobj = Instantiate (objPref, this.transform) as GameObject;
-				newobj.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (110f+h*110 , -150f+v*110);
+				newobj.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (80f+h*110 , -170f+v*110);
 				var panel = newobj.GetComponent<Panel4> ();
 				panel.image.color = Color.red;
 				panels.Add (panel);
@@ -41,7 +41,7 @@ public class PanelController4 : MonoBehaviour {
 		for (int v = 0; v < num; v++) {
 			for (int h = 0; h < num; h++) {
 				var newcurrect = Instantiate (currectPref, this.transform) as GameObject;
-				newcurrect.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (-400f + h * 60, 80 + v * 60);
+				newcurrect.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (-400f + h * 60, 60 + v * 60);
 				var currect = newcurrect.GetComponent<Currect4> ();
 				currects.Add (currect);
 				currect.Xcurrect += h;

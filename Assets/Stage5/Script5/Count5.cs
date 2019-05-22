@@ -16,8 +16,14 @@ public class Count5 : MonoBehaviour {
 	}
 
 	public void Decrese(){
-		Max = Max-1;
-		text.text = "あと" + Max + "回";
+        if (Max>=0)
+        {
+			Max = Max-1;
+			text.text = "あと" + Max + "回";
+		}
+		else if(Max<0){
+			text.text = "あと" + 0 + "回";
+		}
 	}
 
 	public void ResetCount(){

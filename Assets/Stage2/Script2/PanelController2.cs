@@ -25,7 +25,7 @@ public class PanelController2 : MonoBehaviour {
 		for (int v = 0; v < num; v++) {
 			for (int h = 0; h < num; h++) {
 				var newobj = Instantiate (objPref, this.transform) as GameObject;
-				newobj.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (80 + h * 110, -110f + v * 110);
+				newobj.GetComponent<RectTransform> ().anchoredPosition = new Vector2 (80 + h * 110, -130f + v * 110);
 				var panel = newobj.GetComponent<Panel2> ();
 				panel.image.color = Color.red;
 				panels.Add (panel);
